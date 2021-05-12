@@ -1,0 +1,15 @@
+version: "3"
+
+services:
+  kcp-ss:
+    container_name: kcp-ss
+    image: talrasha007/kcp-ss
+    restart: always
+    ports:
+      - 29900:29900/udp
+    environment:
+      SS_PASSWORD: "123456"
+      SS_METHOD: "chacha20-ietf-poly1305"
+      KCPTUN_KEY: "abcdef"
+      KCPTUN_CRYPT: "aes"
+      KCPTUN_MODE: "fast3"
