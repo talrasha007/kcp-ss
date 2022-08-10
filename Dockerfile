@@ -10,6 +10,7 @@ ARG kcptun_targz_url="https://github.com/xtaci/kcptun/releases/download/v2021010
 RUN  set -ex \
   && wget "${kcptun_targz_url}" -O /tmp/kcptun.tar.gz \
   && mkdir -p /usr/local/kcptun && tar -zxf /tmp/kcptun.tar.gz -C /usr/local/kcptun \
+  && mv /usr/local/kcptun/server_linux_$TARGETARCH /usr/local/kcptun/server_linux \
   && rm /tmp/kcptun.tar.gz
 
 COPY supervisord.conf /etc/supervisord.conf
