@@ -3,7 +3,7 @@ version: "3"
 services:
   kcp-ss:
     container_name: kcp-ss
-    image: talrasha007/kcp-ss:v1.0.0
+    image: talrasha007/kcp-ss:v1.0.3
     restart: always
     ports:
       - 29900:29900/udp
