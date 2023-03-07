@@ -21,10 +21,11 @@ jobs:
         with:
           images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
 
-      - name: Log in to the Container registry
+      - name: Build & push Docker image
         uses: mr-smithers-excellent/docker-build-push@v6
         with:
           image: ${{ github.repository }}
+          multiPlatform: true
           platform: linux/amd64,linux/arm64
           registry: ghcr.io
           username: ${{ github.actor }}
