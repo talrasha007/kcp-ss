@@ -25,6 +25,7 @@ jobs:
         uses: mr-smithers-excellent/docker-build-push@v6
         with:
           image: ${{ github.repository }}
+          tags: latest
           multiPlatform: true
           platform: linux/amd64,linux/arm64
           registry: ghcr.io
