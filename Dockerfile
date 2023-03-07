@@ -6,7 +6,7 @@ USER root
 RUN set -ex \
   && apk update && apk add --no-cache supervisor wget
 
-ARG kcptun_targz_url="https://github.com/xtaci/kcptun/releases/download/v20210103/kcptun-linux-$TARGETARCH-20210103.tar.gz"
+ARG kcptun_targz_url="https://github.com/xtaci/kcptun/releases/download/v20230214/kcptun-linux-$TARGETARCH-20230214.tar.gz"
 RUN  set -ex \
   && wget "${kcptun_targz_url}" -O /tmp/kcptun.tar.gz \
   && mkdir -p /usr/local/kcptun && tar -zxf /tmp/kcptun.tar.gz -C /usr/local/kcptun \
